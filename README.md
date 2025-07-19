@@ -21,7 +21,7 @@ This tool acts as a proxy to route requests from the Gemini CLI to various OpenA
 
 1.  Copy the sample configuration file:
     ```bash
-    cp gemini-cli-router/router-config.json.sample ~/.gemini/router-config.json
+    cp gemini-cli-router/router-config.json.sample ~/.gemini-cli-router/router-config.json
     ```
 2.  Edit `~/.gemini/router-config.json` to add your API credentials. You can configure multiple providers and set one as the default.
 
@@ -49,13 +49,13 @@ This tool acts as a proxy to route requests from the Gemini CLI to various OpenA
 Run the Gemini CLI through the router:
 
 ```bash
-gemini-router
+node gemini-cli-router/cli.js
 ```
 
 To enable debug logging, use the `--debug` flag:
 
 ```bash
-gemini-router --debug
+node gemini-cli-router/cli.js --debug
 ```
 
 ### Passthrough Mode
@@ -63,7 +63,7 @@ gemini-router --debug
 To disable all request and response transformations and use the router as a pure logger, use the `--passthrough` flag. Note that you must also enable debug logging to see the output.
 
 ```bash
-gemini-router --debug --passthrough
+node gemini-cli-router/cli.js --debug --passthrough
 ```
 
 ## Logging

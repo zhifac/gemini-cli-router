@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import os from 'os';
 
-const CONFIG_PATH = path.join(os.homedir(), '.gemini', 'openai-proxy-config.json');
+const CONFIG_PATH = path.join(os.homedir(), '.gemini-cli-router', 'router-config.json');
 
 export function loadConfig() {
   if (!fs.existsSync(CONFIG_PATH)) {
@@ -15,7 +15,7 @@ export function loadConfig() {
 
   if (!config.default || !config.providers || !config.providers[config.default]) {
     console.error(`Invalid configuration in ${CONFIG_PATH}`);
-    console.error('Please ensure it contains a 'default' provider and a 'providers' object with the default provider defined.');
+    console.error('Please ensure it contains a "default" provider and a "providers" object with the default provider defined.');
     process.exit(1);
   }
 
