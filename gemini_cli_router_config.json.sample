@@ -1,0 +1,24 @@
+{
+  "//": "Choose ONE of the configurations below (Standard OpenAI or Azure OpenAI)",
+
+  "//": "--- Standard OpenAI Configuration ---",
+  "api_key": "sk-your-openai-or-compatible-api-key",
+  "base_url": "https://api.openai.com/v1/chat/completions",
+  "model": "gpt-4o",
+
+  "//": "--- Azure OpenAI Configuration ---",
+  "//": "Uncomment and fill the fields below to use Azure OpenAI",
+  "// \"api_key\": \"YOUR_AZURE_API_KEY\",",
+  "// \"base_url\": \"https://YOUR_RESOURCE_NAME.openai.azure.com/\",",
+  "// \"azure_deployment_name\": \"YOUR_DEPLOYMENT_NAME\",",
+  "// "azure_api_version": "2024-02-01",",
+
+  "//": "--- Claude AI Configuration ---",
+  "//": "Set is_claude to true and fill in your Anthropic API key.",
+  "// "api_key": "YOUR_ANTHROPIC_API_KEY",",
+  "// "base_url": "https://api.anthropic.com/v1/messages",",
+  "// "is_claude": true,",
+
+  "//": "--- Optional Settings ---",
+  "enable_thinking": false
+}

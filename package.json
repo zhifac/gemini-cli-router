@@ -1,0 +1,24 @@
+{
+  "name": "gemini-openai-proxy",
+  "version": "1.0.0",
+  "description": "A proxy to use OpenAI-compatible APIs with the Gemini CLI",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "gemini-openai": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gemini",
+    "openai",
+    "proxy"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "zod": "^3.22.4",
+    "gpt-tokenizer": "^2.1.2"
+  }
+}
