@@ -1,12 +1,23 @@
 {
-  "name": "gemini-openai-proxy",
+  "name": "gemini-cli-router",
   "version": "1.0.0",
-  "description": "A proxy to use OpenAI-compatible APIs with the Gemini CLI",
+  "description": "A proxy to route Gemini CLI requests to various OpenAI-compatible APIs",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "gemini-openai": "cli.js"
+    "gemini-router": "cli.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "cli.js",
+    "config.js",
+    "interceptor.js",
+    "interceptor-loader.js",
+    "logger.js",
+    "README.md"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

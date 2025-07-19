@@ -42,11 +42,11 @@ if (passthroughIndex > -1) {
     args.splice(passthroughIndex, 1);
 }
 
-const exitAfterStreamIndex = args.indexOf('--exit-after-stream');
-let exitAfterStream = false;
-if (exitAfterStreamIndex > -1) {
-    exitAfterStream = true;
-    args.splice(exitAfterStreamIndex, 1);
+const debugIndex = args.indexOf('--debug');
+let debug = false;
+if (debugIndex > -1) {
+    debug = true;
+    args.splice(debugIndex, 1);
 }
 
 const env = {
@@ -59,9 +59,9 @@ if (passthrough) {
     console.log('[Proxy] Passthrough mode enabled. Transformations are disabled.');
 }
 
-if (exitAfterStream) {
-    env.GEMINI_PROXY_EXIT_AFTER_STREAM = 'true';
-    console.log('[Proxy] Exit after stream mode enabled.');
+if (debug) {
+    env.GEMINI_ROUTER_DEBUG = 'true';
+    console.log('[Router] Debug mode enabled. Logging to gemini-cli-router.log');
 }
 
 const child = spawn('node', [

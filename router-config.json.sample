@@ -1,0 +1,22 @@
+{
+  "default": "openai",
+  "providers": {
+    "openai": {
+      "api_key": "sk-your-openai-api-key",
+      "base_url": "https://api.openai.com/v1/chat/completions",
+      "model": "gpt-4o"
+    },
+    "openrouter": {
+      "api_key": "sk-or-your-openrouter-key",
+      "base_url": "https://openrouter.ai/api/v1/chat/completions",
+      "model": "google/gemini-flash-1.5"
+    },
+    "azure": {
+      "is_azure": true,
+      "api_key": "YOUR_AZURE_API_KEY",
+      "base_url": "https://YOUR_RESOURCE_NAME.openai.azure.com/",
+      "azure_deployment_name": "YOUR_DEPLOYMENT_NAME",
+      "azure_api_version": "2024-02-01"
+    }
+  }
+}

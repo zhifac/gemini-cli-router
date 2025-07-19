@@ -1,0 +1,71 @@
+# Gemini CLI Router
+
+This tool acts as a proxy to route requests from the Gemini CLI to various OpenAI-compatible APIs, such as OpenAI, Azure OpenAI, and OpenRouter.
+
+## Features
+
+- **Seamless Integration**: Works with the existing `gemini` CLI without any modifications to the original tool.
+- **Multi-Provider Support**: Configure multiple API providers and easily switch between them.
+- **Request/Response Logging**: Detailed logging of all requests and responses for easy debugging.
+- **Passthrough Mode**: Bypass all transformations to use the tool as a pure request logger.
+
+## Installation
+
+1.  Clone this repository.
+2.  Install the dependencies:
+    ```bash
+    npm install --prefix gemini-cli-router
+    ```
+
+## Configuration
+
+1.  Copy the sample configuration file:
+    ```bash
+    cp gemini-cli-router/router-config.json.sample ~/.gemini/router-config.json
+    ```
+2.  Edit `~/.gemini/router-config.json` to add your API credentials. You can configure multiple providers and set one as the default.
+
+### Configuration Options
+
+-   `default`: The name of the provider to use by default.
+-   `providers`: An object containing the configuration for each provider.
+
+#### Standard Provider (OpenAI, OpenRouter, etc.)
+
+-   `api_key`: Your API key.
+-   `base_url`: The base URL of the API.
+-   `model`: The name of the model to use.
+
+#### Azure OpenAI Provider
+
+-   `is_azure`: Set to `true`.
+-   `api_key`: Your Azure API key.
+-   `base_url`: The base URL of your Azure resource (e.g., `https://YOUR_RESOURCE_NAME.openai.azure.com/`).
+-   `azure_deployment_name`: The name of your deployment.
+-   `azure_api_version`: The API version to use (e.g., `2024-02-01`).
+
+## Usage
+
+Run the Gemini CLI through the router:
+
+```bash
+gemini-router
+```
+
+To enable debug logging, use the `--debug` flag:
+
+```bash
+gemini-router --debug
+```
+
+### Passthrough Mode
+
+To disable all request and response transformations and use the router as a pure logger, use the `--passthrough` flag. Note that you must also enable debug logging to see the output.
+
+```bash
+gemini-router --debug --passthrough
+```
+
+## Logging
+
+When the `--debug` flag is enabled, all requests and responses are logged to `gemini-cli-router.log` in the current working directory.

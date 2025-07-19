@@ -1,13 +1,17 @@
 import fs from 'fs';
 import path from 'path';
 
-// Log file will be created in the directory where the proxy is run.
-const LOG_FILE = path.join(process.cwd(), 'openai-proxy-debug.log');
+const LOG_FILE = path.join(process.cwd(), 'gemini-cli-router.log');
+const DEBUG_ENABLED = process.env.GEMINI_ROUTER_DEBUG === 'true';
 
-// Clear the log file on startup to keep it clean for each session.
-fs.writeFileSync(LOG_FILE, '');
+// Clear the log file on startup if debug is enabled.
+if (DEBUG_ENABLED) {
+    fs.writeFileSync(LOG_FILE, '');
+}
 
 export function logRequestDetails(title, details) {
+  if (!DEBUG_ENABLED) return;
+
   const timestamp = new Date().toISOString();
   let logEntry = `--- ${timestamp} --- ${title} ---\n`;
 

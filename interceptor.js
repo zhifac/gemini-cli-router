@@ -154,7 +154,6 @@ function transformToOpenAI(geminiRequest, isStream) {
                 }))
             );
             openAIRequest.tools = (openAIRequest.tools || []).concat(convertedTools);
-            //openAIRequest.tools = openAIRequest.tools.slice(0, 6);
         }
     }
     
@@ -389,8 +388,6 @@ function instrumentFetch() {
             'Content-Type': 'application/json',
             'api-key': config.api_key,
         };
-        // For Azure, the model is in the deployment name, not the body
-        // delete openAIRequest.model;
     } else {
         // Standard OpenAI/compatible API
         requestUrl = config.base_url;
