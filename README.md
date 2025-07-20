@@ -52,6 +52,8 @@ Run the Gemini CLI through the router:
 node gemini-cli-router/cli.js
 ```
 
+**Note**: if you are prompted to select auth method, choose `Use Gemini API`.
+
 To enable debug logging, use the `--debug` flag:
 
 ```bash
@@ -64,6 +66,14 @@ To disable all request and response transformations and use the router as a pure
 
 ```bash
 node gemini-cli-router/cli.js --debug --passthrough
+```
+
+### `GEMINI_CLI_PATH` Environment Variable
+
+By default, the router will attempt to find the `gemini` executable in your system's PATH. If you have installed the Gemini CLI in a custom location, you can specify the path to the executable using the `GEMINI_CLI_PATH` environment variable.
+
+```bash
+GEMINI_CLI_PATH=/path/to/your/gemini node gemini-cli-router/cli.js
 ```
 
 ## Logging

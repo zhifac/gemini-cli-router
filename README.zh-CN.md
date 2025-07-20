@@ -52,6 +52,8 @@
 node gemini-cli-router/cli.js
 ```
 
+**注意**: 如果提示选择登录方法, 选择 `Use Gemini API`.
+
 要启用调试日志，请使用 `--debug` 标志：
 
 ```bash
@@ -64,6 +66,14 @@ node gemini-cli-router/cli.js --debug
 
 ```bash
 node gemini-cli-router/cli.js --debug --passthrough
+```
+
+### `GEMINI_CLI_PATH` 环境变量
+
+默认情况下，gemini-cli-router会尝试在系统的 PATH 中查找 `gemini` 可执行文件。如果您的 Gemini CLI 安装在自定义位置，您可以使用 `GEMINI_CLI_PATH` 环境变量指定可执行文件的路径。
+
+```bash
+GEMINI_CLI_PATH=/path/to/your/gemini node gemini-cli-router/cli.js
 ```
 
 ## 日志

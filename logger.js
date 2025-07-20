@@ -9,9 +9,7 @@ if (DEBUG_ENABLED) {
     fs.writeFileSync(LOG_FILE, '');
 }
 
-export function logRequestDetails(title, details) {
-  if (!DEBUG_ENABLED) return;
-
+function writeToLog(title, details) {
   const timestamp = new Date().toISOString();
   let logEntry = `--- ${timestamp} --- ${title} ---\n`;
 
@@ -29,8 +27,21 @@ export function logRequestDetails(title, details) {
         logEntry += `Body (raw): ${details.body}\n`;
     }
   }
+  if (details.request_body) {
+    logEntry += `Request Body: ${JSON.stringify(details.request_body, null, 2)}\n`;
+  }
   logEntry += `--- End of ${title} ---\n\n`;
 
   fs.appendFileSync(LOG_FILE, logEntry);
+}
+
+export function logRequestDetails(title, details) {
+  if (!DEBUG_ENABLED) return;
+  writeToLog(title, details);
   console.log(`[Proxy Debug] Logged ${title} to openai-proxy-debug.log`);
+}
+
+export function logError(title, details) {
+    writeToLog(title, details);
+    console.error(`[Proxy] Logged ${title} to gemini-cli-router.log`);
 }

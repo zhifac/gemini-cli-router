@@ -21,7 +21,7 @@ function findGeminiExecutable() {
     return null;
 }
 
-var geminiCLIPath = findGeminiExecutable();
+let geminiCLIPath = findGeminiExecutable();
 
 if (process.env.GEMINI_CLI_PATH) {
     geminiCLIPath = process.env.GEMINI_CLI_PATH;

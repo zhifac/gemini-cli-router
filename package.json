@@ -16,10 +16,13 @@
     "interceptor.js",
     "interceptor-loader.js",
     "logger.js",
-    "README.md"
+    "README.md",
+    "transformToOpenAI.js",
+    "transformToGemini.js",
+    "utils.js"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest"
   },
   "keywords": [
     "gemini",
@@ -28,8 +31,10 @@
   ],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "vitest": "^0.34.6"
+  },
   "dependencies": {
-    "zod": "^3.22.4",
-    "gpt-tokenizer": "^2.1.2"
+    "gpt-tokenizer": "^2.9.0"
   }
 }
