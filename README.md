@@ -23,7 +23,7 @@ This tool acts as a proxy to route requests from the Gemini CLI to various OpenA
     ```bash
     cp gemini-cli-router/router-config.json.sample ~/.gemini-cli-router/router-config.json
     ```
-2.  Edit `~/.gemini/router-config.json` to add your API credentials. You can configure multiple providers and set one as the default.
+2.  Edit `~/.gemini-cli-router/router-config.json` to add your API credentials. You can configure multiple providers and set one as the default.
 
 ### Configuration Options
 

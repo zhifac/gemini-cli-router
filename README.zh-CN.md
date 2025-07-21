@@ -23,7 +23,7 @@
     ```bash
     cp gemini-cli-router/router-config.json.sample ~/.gemini-cli-router/router-config.json
     ```
-2.  编辑 `~/.gemini/router-config.json` 文件，添加您的 API 凭据。您可以配置多个提供商，并设置一个为默认提供商。
+2.  编辑 `~/.gemini-cli-router/router-config.json` 文件，添加您的 API 凭据。您可以配置多个提供商，并设置一个为默认提供商。
 
 ### 配置选项
 
