@@ -1,11 +1,11 @@
 {
-  "name": "gemini-cli-router",
-  "version": "1.0.0",
+  "name": "@zhifac/gemini-cli-router",
+  "version": "0.0.1",
   "description": "A proxy to route Gemini CLI requests to various OpenAI-compatible APIs",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "gemini-router": "cli.js"
+    "gemini-cli-router": "cli.js"
   },
   "publishConfig": {
     "access": "public"

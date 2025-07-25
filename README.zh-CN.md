@@ -11,6 +11,14 @@
 
 ## 安装
 
+### Option1: 用npm安装
+
+```bash
+npm install -g @zhifac/gemini-cli-router
+```
+
+### Option2: 用源码安装
+
 1.  克隆本仓库。
 2.  安装依赖：
     ```bash
@@ -49,6 +57,10 @@
 通过路由器运行 Gemini CLI：
 
 ```bash
+# Option1: npm安装方式
+gemini-cli-router
+
+# Option2: 源码方式
 node gemini-cli-router/cli.js
 ```
 
@@ -57,6 +69,10 @@ node gemini-cli-router/cli.js
 要启用调试日志，请使用 `--debug` 标志：
 
 ```bash
+gemini-cli-router --debug
+
+或
+
 node gemini-cli-router/cli.js --debug
 ```
 
@@ -65,6 +81,10 @@ node gemini-cli-router/cli.js --debug
 要禁用所有请求和响应转换，并将路由器用作纯粹的记录器，请使用 `--passthrough` 标志。请注意，您还必须启用调试日志才能看到输出。
 
 ```bash
+gemini-cli-router --debug --passthrough
+
+或
+
 node gemini-cli-router/cli.js --debug --passthrough
 ```
 

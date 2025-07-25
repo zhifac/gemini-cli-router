@@ -1,5 +1,6 @@
 # Gemini CLI Router
 
+[中文版](https://github.com/zhifac/gemini-cli-router/blob/master/README.zh-CN.md)
 This tool acts as a proxy to route requests from the Gemini CLI to various OpenAI-compatible APIs, such as OpenAI, Azure OpenAI, and OpenRouter.
 
 ## Features
@@ -10,6 +11,14 @@ This tool acts as a proxy to route requests from the Gemini CLI to various OpenA
 - **Passthrough Mode**: Bypass all transformations to use the tool as a pure request logger.
 
 ## Installation
+
+### Option1: install via npm
+
+```bash
+npm install -g @zhifac/gemini-cli-router
+```
+
+### Option2: install from source
 
 1.  Clone this repository.
 2.  Install the dependencies:
@@ -49,6 +58,10 @@ This tool acts as a proxy to route requests from the Gemini CLI to various OpenA
 Run the Gemini CLI through the router:
 
 ```bash
+# Option1: run with npm install
+gemini-cli-router
+
+# Option2: run from source
 node gemini-cli-router/cli.js
 ```
 
@@ -57,6 +70,10 @@ node gemini-cli-router/cli.js
 To enable debug logging, use the `--debug` flag:
 
 ```bash
+gemini-cli-router --debug
+
+OR
+
 node gemini-cli-router/cli.js --debug
 ```
 
@@ -65,6 +82,10 @@ node gemini-cli-router/cli.js --debug
 To disable all request and response transformations and use the router as a pure logger, use the `--passthrough` flag. Note that you must also enable debug logging to see the output.
 
 ```bash
+gemini-cli-router --debug --passthrough
+
+OR
+
 node gemini-cli-router/cli.js --debug --passthrough
 ```
 
